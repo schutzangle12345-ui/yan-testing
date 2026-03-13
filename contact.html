@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Our Luxury Concierge | yan-testing</title>
+    <meta name="description" content="Get in touch with BookLux AI concierge for private jet charters, yacht bookings, and luxury villa rentals. Our team is available for HNW individuals and family offices.">
+    <style>
+        :root {
+            --color-primary: #ff4d00;
+            --color-primary-dark: #cc3e00;
+            --color-secondary: #7000ff;
+            --color-background: #050505;
+            --color-surface: #121214;
+            --color-text: #ffffff;
+            --color-text-muted: #a1a1aa;
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            --gradient-vibrant: linear-gradient(135deg, #7000ff 0%, #ff4d00 100%);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--color-background);
+            color: var(--color-text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Navigation */
+        nav {
+            padding: 1.5rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(5, 5, 5, 0.8);
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a:hover {
+            color: var(--color-primary);
+        }
+
+        .btn {
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            display: inline-block;
+            border: none;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background: var(--gradient-vibrant);
+            color: white;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(112, 0, 255, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 8rem 0 4rem;
+            text-align: center;
+            background: radial-gradient(circle at top right, rgba(112, 0, 255, 0.15), transparent),
+                        radial-gradient(circle at bottom left, rgba(255, 77, 0, 0.1), transparent);
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 5rem);
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -2px;
+        }
+
+        .hero .accent {
+            background: var(--gradient-vibrant);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--color-text-muted);
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin: 4rem 0;
+        }
+
+        .contact-info h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--color-primary);
+        }
+
+        .info-card {
+            background: var(--color-surface);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.05);
+            margin-bottom: 2rem;
+        }
+
+        .info-card h3 {
+            margin-bottom: 1rem;
+            color: var(--color-text);
+        }
+
+        .info-card p {
+            color: var(--color-text-muted);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Form Styling */
+        .contact-form {
+            background: var(--color-surface);
+            padding: 3rem;
+            border-radius: 30px;
+            border: 2px solid transparent;
+            background-image: linear-gradient(var(--color-surface), var(--color-surface)), var(--gradient-vibrant);
+            background-origin: border-box;
+            background-clip: padding-box, border-box;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .form-group input, 
+        .form-group select, 
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 10px;
+            color: white;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+
+        .form-group input:focus, 
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--color-primary);
+        }
+
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        /* Pillars / FAQs Section */
+        .pillars {
+            padding: 4rem 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .pillar-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .pillar-item h4 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--color-primary);
+        }
+
+        /* Footer */
+        footer {
+            padding: 6rem 0 3rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            margin-top: 4rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .footer-logo {
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .footer-links h5 {
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 0.75rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links svg {
+            width: 24px;
+            height: 24px;
+            fill: var(--color-text-muted);
+            transition: fill 0.3s;
+        }
+
+        .social-links svg:hover {
+            fill: var(--color-primary);
+        }
+
+        .copyright {
+            color: var(--color-text-muted);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            .nav-links {
+                display: none;
+            }
+            .hero h1 {
+                font-size: 3rem;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .contact-form {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="container">
+        <a href="index.html">
+            <span style="font-weight:700;font-size:1.25rem">yan-testing</span>
+        </a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="contact.html">Contact</a>
+            <a href="contact.html" class="btn btn-primary" data-track="cta_click">Book Now</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container">
+            <h1>Expert <span class="accent">Concierge</span> Support</h1>
+            <p>From private jet routes and empty legs to Mediterranean yacht itineraries, our specialists are ready to handle every detail of your luxury lifestyle.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h2>Talk to a Specialist</h2>
+                <p style="margin-bottom: 2rem; font-size: 1.1rem; color: var(--color-text-muted);">
+                    Whether you are planning a multi-stop itinerary, looking for private jet charter prices, or need a Michelin-star private chef at your villa, our AI-powered human-backed team is available 24/7.
+                </p>
+
+                <div class="info-card">
+                    <h3>Direct Inquiries</h3>
+                    <p><strong>Family Offices:</strong> family@yantesting.com</p>
+                    <p><strong>Service Partners:</strong> partners@yantesting.com</p>
+                    <p><strong>Urgent Bookings:</strong> +1 (555) LUX-BOOK</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>Global Coverage</h3>
+                    <p>Cote d'Azur • Amalfi Coast • Balearic Islands</p>
+                    <p>Dubai • Miami • Aspen • Courchevel</p>
+                </div>
+
+                <div class="pillar-item" style="margin-top: 2rem;">
+                    <h4>Booking Tip</h4>
+                    <p style="font-size: 0.9rem; color: var(--color-text-muted);">
+                        For peak season villa rentals or yacht charters, we recommend booking at least 6 months in advance to secure the most prestigious properties and vessels.
+                    </p>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <form data-backend="form">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" placeholder="Johnathan Sterling" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="service">Service Interest</label>
+                        <select id="service" name="service_type">
+                            <option value="private_jet">Private Jet Charter</option>
+                            <option value="yacht_charter">Luxury Yacht Rental</option>
+                            <option value="villa_rental">Luxury Villa & Chalet</option>
+                            <option value="chauffeur">Private Driver & Transfers</option>
+                            <option value="chef">Private Chef & In-Villa Dining</option>
+                            <option value="vip_nightlife">VIP Nightlife & Experiences</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Your Requirements</label>
+                        <textarea id="message" name="message" placeholder="Describe your dates, locations, and any specific preferences for your trip..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%; font-size: 1.1rem; padding: 1.2rem;" data-track="cta_click">Request Quote</button>
+                    
+                    <p data-success style="display:none; color: #00ff88; font-weight: bold; margin-top: 1rem; text-align: center;">
+                        Thank you. A luxury lifestyle manager will contact you within 15 minutes.
+                    </p>
+                </form>
+            </div>
+        </div>
+
+        <section class="pillars">
+            <h2 style="margin-bottom: 3rem; text-align: center; font-size: 2rem;">What You Can Expect</h2>
+            <div class="pillar-grid">
+                <div class="pillar-item">
+                    <h4>Price Transparency</h4>
+                    <p>We explain how jet costs work—from light to heavy jets—and decode yacht APA (Advanced Provisioning Allowance) so there are no surprises.</p>
+                </div>
+                <div class="pillar-item">
+                    <h4>Risk Management</h4>
+                    <p>We handle complex contracts, cancellation policies, and force majeure clauses to protect your deposits and travel plans.</p>
+                </div>
+                <div class="pillar-item">
+                    <h4>One Point of Contact</h4>
+                    <p>Stop managing dozens of vendors. Your BookLux concierge handles the jet, the yacht, the villa, and the chef under one umbrella.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="container">
+        <div class="footer-grid">
+            <div>
+                <a href="index.html" class="footer-logo">
+                    <span style="font-weight:700;font-size:1.5rem">yan-testing</span>
+                </a>
+                <p style="color: var(--color-text-muted); max-width: 300px;">
+                    The ultimate AI concierge for high net worth individuals seeking seamless luxury booking experiences across the globe.
+                </p>
+                <div class="social-links">
+                    <a href="#"><svg viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg></a>
+                    <a href="#"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h5>Navigation</h5>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h5>Legal</h5>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Booking Terms</a></li>
+                    <li><a href="#">Cancellation Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            © 2026 yan-testing. AI Luxury Concierge Services.
+        </div>
+    </footer>
+
+    <script>
+    (function() {
+      var BACKEND = 'https://epitaphic-everett-propitious.ngrok-free.dev/api';
+      var TOKEN = '9bfa8cea5f6132fcb711647dfe9241c5806ffc0dc7f4798baaba4b1a01071a79';
+      var DOMAIN = 'yantesting.com';
+      var FORM_ID = '';
+      var HEADERS = { 'Content-Type': 'application/json', 'X-Token': TOKEN, 'X-Domain': DOMAIN };
+
+      // 1. Auto-track pageview
+      fetch(BACKEND + '/track', {
+        method: 'POST',
+        headers: HEADERS,
+        body: JSON.stringify({ event: 'pageview', path: window.location.pathname })
+      }).catch(function(){});
+
+      // 2. Track CTA clicks
+      document.addEventListener('click', function(e) {
+        var el = e.target.closest('[data-track]');
+        if (el) {
+          fetch(BACKEND + '/track', {
+            method: 'POST',
+            headers: HEADERS,
+            body: JSON.stringify({ event: el.getAttribute('data-track'), path: window.location.pathname })
+          }).catch(function(){});
+        }
+      });
+
+      // 3. Handle all forms (Contact, Signup, Waitlist)
+      document.addEventListener('submit', function(e) {
+        var form = e.target.closest('form[data-backend]');
+        if (!form) return;
+        e.preventDefault();
+        var type = form.getAttribute('data-backend');
+        var endpoint = type === 'signup' ? '/users' : '/forms/submit';
+        
+        // Extract dynamic form fields
+        var data = {};
+        new FormData(form).forEach(function(v, k) { data[k] = v; });
+        
+        // Add Form ID if it's a general form and we have it
+        if (type === 'form' && FORM_ID) {
+          data.formId = FORM_ID;
+        }
+
+        var btn = form.querySelector('button[type="submit"]');
+        var originalText = '';
+        if (btn) {
+          originalText = btn.innerText;
+          btn.innerText = 'Sending...';
+          btn.disabled = true;
+        }
+
+        // Track Form Submission Event
+        fetch(BACKEND + '/track', {
+          method: 'POST',
+          headers: HEADERS,
+          body: JSON.stringify({ 
+            event: 'form_submission', 
+            path: window.location.pathname,
+            metadata: { formType: type } 
+          })
+        }).catch(function(){});
+
+        // Submit Form Data
+        fetch(BACKEND + endpoint, {
+          method: 'POST',
+          headers: HEADERS,
+          body: JSON.stringify(data)
+        }).then(function(r) { return r.json(); }).then(function(res) {
+          if (res.success) {
+            var msg = form.querySelector('[data-success]');
+            if (msg) { msg.style.display = 'block'; }
+            form.reset();
+            if (btn) btn.style.display = 'none';
+          } else {
+            alert(res.error || 'Failed to submit form');
+            if (btn) { btn.innerText = originalText; btn.disabled = false; }
+          }
+        }).catch(function(){
+          alert('Network error occurred');
+          if (btn) { btn.innerText = originalText; btn.disabled = false; }
+        });
+      });
+    })();
+    </script>
+</body>
+</html>
